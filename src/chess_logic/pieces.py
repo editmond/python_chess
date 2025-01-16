@@ -9,8 +9,9 @@ class Rook(Piece):
         super().__init__(position, target, isWhite)
 
     def __str__(self):
-        colour = ("Black", "White")[self.isWhite]
-        return f"{colour} at {self.position}"
+        #
+        pieceString = ("RB","RW")[self.isWhite]
+        return f"{pieceString}"
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.target}")
@@ -20,8 +21,9 @@ class Knight(Piece):
         super().__init__(position, target, isWhite)
 
     def __str__(self):
-        colour = ("Black", "White")[self.isWhite]
-        return f"{colour} at {self.position}"
+        #
+        pieceString = ("NB","NW")[self.isWhite]
+        return f"{pieceString}"
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.target}")
@@ -31,8 +33,9 @@ class Bishop(Piece):
         super().__init__(position, target, isWhite)
 
     def __str__(self):
-        colour = ("Black", "White")[self.isWhite]
-        return f"{colour} at {self.position}"
+        #
+        pieceString = ("BB","BW")[self.isWhite]
+        return f"{pieceString}"
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.target}")
@@ -42,8 +45,9 @@ class Queen(Piece):
         super().__init__(position, target, isWhite)
 
     def __str__(self):
-        colour = ("Black", "White")[self.isWhite]
-        return f"{colour} at {self.position}"
+        #
+        pieceString = ("QB","QW")[self.isWhite]
+        return f"{pieceString}"
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.target}")
@@ -53,8 +57,9 @@ class King(Piece):
         super().__init__(position, target, isWhite)
 
     def __str__(self):
-        colour = ("Black", "White")[self.isWhite]
-        return f"{colour} at {self.position}"
+        #
+        pieceString = ("KB","KW")[self.isWhite]
+        return f"{pieceString}"
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.target}")
@@ -64,11 +69,22 @@ class Pawn(Piece):
         super().__init__(position, target, isWhite)
 
     def __str__(self):
-        colour = ("Black", "White")[self.isWhite]
-        return f"{colour} at {self.position}"
+        #
+        pieceString = ("PB","PW")[self.isWhite]
+        return f"{pieceString}"
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.target}")
 
-
+#class NoPiece(Piece):
+#    def __init__(self, position, target, isWhite):
+#        super().__init__(position, target, isWhite)
+#
+#    def __str__(self):
+#        #
+#        pieceString = ("KB","KW")[self.isWhite]
+#        return f"{pieceString}"
+#
+#    def moveCheck(self):
+#        print(f"Check if a {self} can move to {self.target}")
 

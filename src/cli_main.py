@@ -1,8 +1,8 @@
-import chess_logic.pieces
+from chess_logic.game_control import game_start
+from chess_logic.pieces import Rook
 
+game_start()
 
-rook = chess_logic.pieces.Rook([0,0], [0,0], True)
-print(f"{rook}")
-rook.moveCheck()
-rook.target = [0,5]
-rook.moveCheck()
+rook = Rook([0,0], [0,0], True)
+print(rook)
+
