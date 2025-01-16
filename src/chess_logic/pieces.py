@@ -1,8 +1,11 @@
+from enum import Enum
+
 class Piece:
     def __init__(self, position, target, isWhite):
         self.position = position
         self.target = target
         self.isWhite = isWhite 
+
 
 class Rook(Piece):
     def __init__(self, position, target, isWhite):
@@ -75,6 +78,15 @@ class Pawn(Piece):
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.target}")
+
+#an attempt to leverage enums
+# class Pieces(Enum):
+#     Pawn = 1
+#     Rook = 2
+#     Knight = 3
+#     Bishop = 4
+#     Queen = 5
+#     King = 6
 
 #class NoPiece(Piece):
 #    def __init__(self, position, target, isWhite):
