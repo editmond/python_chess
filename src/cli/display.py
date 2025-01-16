@@ -14,6 +14,10 @@ def addPieces(display, activePieces):
     return display
 
 def printDisplay(display):
+    print("\nY")
+    counter = 0
     for row in display:
         row = " ".join(row)
-        print(row)
+        print(f"{counter} {row}")
+        counter += 1
+    print("  0  1  2  3  4  5  6  7  X \n")

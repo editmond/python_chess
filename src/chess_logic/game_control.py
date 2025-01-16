@@ -29,5 +29,5 @@ def gameStart():
     
     return
 
-def player_turn(target):
+def player_turn(position, target):
     return
