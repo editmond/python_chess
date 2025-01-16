@@ -1,0 +1,9 @@
+In src/chess_logic/game_state.py :
+  activePieces: [Piece, Piece, ...]
+  isWhiteTurn: Boolean
+  totalMoves: Integer
+  movesSinceCheck = 0
+
+In src/cli/display :
+  Paramaters named display expect a 2d array with format: [[String, String, ...], [String, String, ...], ...]
+  Parameters named activePieces expect an arry with format: [Piece, Piece, ...]

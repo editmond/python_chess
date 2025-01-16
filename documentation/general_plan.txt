@@ -3,3 +3,6 @@ Have two separate systems.
 - a backend that manages all the chess logic
 - a frontend that provides either a gui or cli 
 - - they shouldn't need to access internals of chess logic. just be able to make calls to very surface level functions
+
+Focus on creating the chess logic. Implement cli side of things when trying to test each feature of the logic.
+e.g. create logic for board initialisation then create logic to display the board to test the new feature.
