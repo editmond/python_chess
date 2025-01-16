@@ -20,6 +20,9 @@ class Rook(Piece):
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
+        if self.xtarget != self.xpos and self.ytarget != self.ypos:
+            return False
+        return True
 
 class Knight(Piece):
     def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
@@ -32,6 +35,7 @@ class Knight(Piece):
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
+        return True
 
 class Bishop(Piece):
     def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
@@ -44,6 +48,7 @@ class Bishop(Piece):
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
+        return True
 
 class Queen(Piece):
     def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
@@ -56,6 +61,7 @@ class Queen(Piece):
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
+        return True
 
 class King(Piece):
     def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
@@ -68,6 +74,7 @@ class King(Piece):
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
+        return True
 
 class Pawn(Piece):
     def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
@@ -80,6 +87,7 @@ class Pawn(Piece):
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
+        return True
 
 #an attempt to leverage enums
 # class Pieces(Enum):

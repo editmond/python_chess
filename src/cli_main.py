@@ -5,15 +5,16 @@ from cli import input
 
 #Before the game loop ~~~~
 game_control.gameStart()
-#display the board
-gameDisplay = display.createDisplay([])
-gameDisplay = display.addPieces(gameDisplay, game_state.activePieces)
 
 #Game loop ~~~
 while not game_state.isGameOver:
+    #display the board
+    gameDisplay = display.createDisplay([])
+    gameDisplay = display.addPieces(gameDisplay, game_state.activePieces)
     display.printDisplay(gameDisplay)
-    input.inputMove(game_state.isWhiteTurn)
 
-    game_control.player_turn(0, 0, 0, 5)
+    # input.inputMove(game_state.isWhiteTurn)
+
+    game_control.player_turn(0, 0, 2, 0)
 
     

@@ -33,17 +33,42 @@ def player_turn(xpos, ypos, xtarget, ytarget):
     #search for piece in position
     foundPiece = False
     index = 0
+
     while not foundPiece and index < len(game_state.activePieces):
         if xpos == game_state.activePieces[index].xpos and ypos == game_state.activePieces[index].ypos:
             foundPiece = True
-            print(f"{game_state.activePieces[index]}")
         else:
             index += 1
+
+    if not foundPiece:
+        return False
 
     #check to see if target is a valid move
     game_state.activePieces[index].xtarget = xtarget
     game_state.activePieces[index].ytarget = ytarget
-    game_state.activePieces[index].moveCheck()
+    isValidMove = game_state.activePieces[index].moveCheck()
+
+    if not isValidMove:
+        return False
+
+    #remove captured pieces
+    foundPiece = False
+    captureIndex = 0
+    while not foundPiece and captureIndex < len(game_state.activePieces):
+        if xtarget == game_state.activePieces[captureIndex].xpos and ytarget == game_state.activePieces[captureIndex].ypos:
+            foundPiece = True
+        else:
+            captureIndex += 1
+
+    if game_state.activePieces[captureIndex].isWhite == game_state.isWhiteTurn:
+        return False #a check to prevent capturing your own pieces
+
+    game_state.activePieces.pop(captureIndex)
+
+    #change the piece's position
+    game_state.activePieces[index].xpos = xtarget
+    game_state.activePieces[index].ypos = ytarget
+
     #switch to the other player's turn'
     game_state.isWhiteTurn = not game_state.isWhiteTurn
-    return
+    return True
