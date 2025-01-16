@@ -1,7 +1,14 @@
-from chess_logic.game_control import game_start
-from chess_logic.pieces import Rook
+from chess_logic import game_control 
+from chess_logic import game_state
+from cli import display
 
-game_start()
 
+#Before the game loop ~~~~
+game_control.gameStart()
 #display the board
+gameDisplay = display.createDisplay([])
+gameDisplay = display.addPieces(gameDisplay, game_state.activePieces)
 
+display.printDisplay(gameDisplay)
+
+#Game loop ~~~
