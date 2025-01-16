@@ -1,15 +1,17 @@
 from enum import Enum
 
 class Piece:
-    def __init__(self, position, target, isWhite):
-        self.position = position
-        self.target = target
+    def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
+        self.xpos = xpos
+        self.ypos = ypos
+        self.xtarget = xtarget
+        self.ytarget = ytarget
         self.isWhite = isWhite 
 
 
 class Rook(Piece):
-    def __init__(self, position, target, isWhite):
-        super().__init__(position, target, isWhite)
+    def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
+        super().__init__(xpos, ypos, xtarget, ytarget, isWhite)
 
     def __str__(self):
         #
@@ -17,11 +19,11 @@ class Rook(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.target}")
+        print(f"Check if a {self} can move to {self.xtarget}")
 
 class Knight(Piece):
-    def __init__(self, position, target, isWhite):
-        super().__init__(position, target, isWhite)
+    def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
+        super().__init__(xpos, ypos, xtarget, ytarget, isWhite)
 
     def __str__(self):
         #
@@ -29,11 +31,11 @@ class Knight(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.target}")
+        print(f"Check if a {self} can move to {self.xtarget}")
 
 class Bishop(Piece):
-    def __init__(self, position, target, isWhite):
-        super().__init__(position, target, isWhite)
+    def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
+        super().__init__(xpos, ypos, xtarget, ytarget, isWhite)
 
     def __str__(self):
         #
@@ -41,11 +43,11 @@ class Bishop(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.target}")
+        print(f"Check if a {self} can move to {self.xtarget}")
 
 class Queen(Piece):
-    def __init__(self, position, target, isWhite):
-        super().__init__(position, target, isWhite)
+    def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
+        super().__init__(xpos, ypos, xtarget, ytarget, isWhite)
 
     def __str__(self):
         #
@@ -53,11 +55,11 @@ class Queen(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.target}")
+        print(f"Check if a {self} can move to {self.xtarget}")
 
 class King(Piece):
-    def __init__(self, position, target, isWhite):
-        super().__init__(position, target, isWhite)
+    def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
+        super().__init__(xpos, ypos, xtarget, ytarget, isWhite)
 
     def __str__(self):
         #
@@ -65,11 +67,11 @@ class King(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.target}")
+        print(f"Check if a {self} can move to {self.xtarget}")
 
 class Pawn(Piece):
-    def __init__(self, position, target, isWhite):
-        super().__init__(position, target, isWhite)
+    def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
+        super().__init__(xpos, ypos, xtarget, ytarget, isWhite)
 
     def __str__(self):
         #
@@ -77,7 +79,7 @@ class Pawn(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.target}")
+        print(f"Check if a {self} can move to {self.xtarget}")
 
 #an attempt to leverage enums
 # class Pieces(Enum):
@@ -89,8 +91,8 @@ class Pawn(Piece):
 #     King = 6
 
 #class NoPiece(Piece):
-#    def __init__(self, position, target, isWhite):
-#        super().__init__(position, target, isWhite)
+#    def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
+#        super().__init__(xpos, ypos, xtarget, ytarget, isWhite)
 #
 #    def __str__(self):
 #        #
@@ -98,5 +100,5 @@ class Pawn(Piece):
 #        return f"{pieceString}"
 #
 #    def moveCheck(self):
-#        print(f"Check if a {self} can move to {self.target}")
+#        print(f"Check if a {self} can move to {self.xtarget}")
 
