@@ -14,5 +14,6 @@ while not game_state.isGameOver:
     display.printDisplay(gameDisplay)
     input.inputMove(game_state.isWhiteTurn)
 
-    game_state.isWhiteTurn = not game_state.isWhiteTurn
+    game_control.player_turn(0, 0, 0, 5)
+
     

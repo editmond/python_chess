@@ -19,7 +19,7 @@ class Rook(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.xtarget}")
+        print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
 
 class Knight(Piece):
     def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
@@ -31,7 +31,7 @@ class Knight(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.xtarget}")
+        print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
 
 class Bishop(Piece):
     def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
@@ -43,7 +43,7 @@ class Bishop(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.xtarget}")
+        print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
 
 class Queen(Piece):
     def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
@@ -55,7 +55,7 @@ class Queen(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.xtarget}")
+        print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
 
 class King(Piece):
     def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
@@ -67,7 +67,7 @@ class King(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.xtarget}")
+        print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
 
 class Pawn(Piece):
     def __init__(self, xpos, ypos, xtarget, ytarget, isWhite):
@@ -79,7 +79,7 @@ class Pawn(Piece):
         return f"{pieceString}"
 
     def moveCheck(self):
-        print(f"Check if a {self} can move to {self.xtarget}")
+        print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
 
 #an attempt to leverage enums
 # class Pieces(Enum):
@@ -100,5 +100,5 @@ class Pawn(Piece):
 #        return f"{pieceString}"
 #
 #    def moveCheck(self):
-#        print(f"Check if a {self} can move to {self.xtarget}")
+#        print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
 
