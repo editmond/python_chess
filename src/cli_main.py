@@ -6,15 +6,21 @@ from cli import input
 #Before the game loop ~~~~
 game_control.gameStart()
 
+hasMoved = True
+
+#temporary, remove after testing
+counter = 0
 #Game loop ~~~
-while not game_state.isGameOver:
+while not game_state.isGameOver and counter < 3:
     #display the board
     gameDisplay = display.createDisplay([])
     gameDisplay = display.addPieces(gameDisplay, game_state.activePieces)
     display.printDisplay(gameDisplay)
+    if not hasMoved:
+        print("Invalid move")
 
     # input.inputMove(game_state.isWhiteTurn)
 
-    game_control.player_turn(0, 0, 2, 0)
+    hasMoved = game_control.player_turn(1, 0, 3, 3)
 
-    
+    counter += 1
