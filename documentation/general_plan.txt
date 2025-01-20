@@ -10,3 +10,10 @@ e.g. create logic for board initialisation then create logic to display the boar
 The GUI and CLI should only call chess logic functions and pass in move inputs.
 Game variables such as the current player's turn or the available pieces should be treated as read only for the GUI and CLI code.
 Only chess logic functions will be allowed to alter game variables.
+
+
+Programming the turns:
+- do basic movement first
+- - make movement work on an empty board
+- - make movement check for pieces in the way
+- - make checks for discovered checks and prevent them.
