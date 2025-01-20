@@ -30,6 +30,12 @@ def gameStart():
     return
 
 def player_turn(xpos, ypos, xtarget, ytarget):
+    #no moving the other player's piece
+    for piece in game_state.activePieces:
+        if piece.isWhite != game_state.isWhiteTurn:
+            if piece.xpos == xpos and piece.ypos == ypos:
+                return False
+
     #no moving to the position a piece is already in
     if (xpos, ypos) == (xtarget, ytarget):
         return False

@@ -21,6 +21,10 @@ class Rook(Piece):
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
 
+        #ignore moves outside the board
+        if self.xtarget < 0 or self.ytarget < 0:
+            return False
+
         #eliminate any targets that do not fit the cross pattern
         if self.xtarget != self.xpos and self.ytarget != self.ypos:
             return False
@@ -34,6 +38,8 @@ class Rook(Piece):
             for piece in game_state.activePieces:
                 if piece.xpos in range(self.xpos+1, self.xtarget) or piece.xpos in range(self.xtarget+1, self.xpos):
                     return False
+        else:
+            return False
 
         return True
 
@@ -77,6 +83,34 @@ class Bishop(Piece):
 
     def moveCheck(self):
         print(f"Check if a {self} can move to {self.xtarget}{self.ytarget}")
+
+        #ignore targets outside the board
+        if self.xtarget < 0 or self.ytarget < 0:
+            return False
+
+        #check if the target fits an x pattern around current position.
+        if not (((self.xtarget-self.xpos) == (self.ytarget-self.ypos)) or (-(self.xtarget-self.xpos) == (self.ytarget-self.xtarget))):
+            return False
+        #only targets fitting the cross remain
+        
+        #check for pieces in the way
+        posToCheck = []
+        if (self.xtarget-self.xpos) == (self.xtarget-self.ypos):
+            for x,y in range(self.xpos+1, self.xtarget), range(self.ypos+1, self.ytarget):
+                posToCheck.append([x,y])
+            for x,y in range(self.xtarget+1, self.xpos), range(self.ytarget+1, self.ypos):
+                posToCheck.append([x,y])
+        else: #the case of the other diagonal
+            if len(range(self.xpos+1, self.xtarget)) == len(range(self.ytarget+1, self.ypos)):
+                for x,y in range(self.xpos+1, self.xtarget), range(self.ytarget+1, self.ypos):
+                    posToCheck.append([x,y])
+            else:
+                for x,y in range(self.xpos+1, self.xtarget), range(self.ypos+1, self.ytarget):
+                    posToCheck.append([x,y])
+        for piece in game_state.activePieces:
+            if [piece.xpos, piece.ypos] in posToCheck:
+                return False
+        
         return True
 
 class Queen(Piece):

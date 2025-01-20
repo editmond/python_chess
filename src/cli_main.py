@@ -21,6 +21,6 @@ while not game_state.isGameOver and counter < 3:
 
     # input.inputMove(game_state.isWhiteTurn)
 
-    hasMoved = game_control.player_turn(1, 0, 3, 3)
+    hasMoved = game_control.player_turn(2, 0, 5, 3)
 
     counter += 1
